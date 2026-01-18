@@ -4,6 +4,7 @@
 
 import sys
 sys.setrecursionlimit(10001)
+import time
 
 FLAT = 0
 UPPER2 = 1
@@ -36,5 +37,8 @@ def nWays(d, s):
         m[(d, s)] = counter
         return counter
 
+start = time.time()
 print(nWays(0, FLAT))
+end = time.time()
+print("running time", end - start)
 # print(m)

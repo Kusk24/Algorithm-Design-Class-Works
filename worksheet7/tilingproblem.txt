@@ -1,0 +1,12 @@
+# Name - Win Yu Maung
+# ID - 6612054
+# Sec - 542
+
+a) For Brute Force, exceeds over 1s at 20
+   For Memorization, doesn't exceed over 1s even at 1000
+   For Dynamic Programming, doesn't exceed over 1s even at 1000
+
+b) 10000
+
+c) Dynamic Programming has no recursion limit, and it has slightly better performance. Since, it has no recursion limit, it can run up to some point until the system limits.
+    The reason for that advantage is dynamic programming uses iteration loop while memorization uses recursive function.
