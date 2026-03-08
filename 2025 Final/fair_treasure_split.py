@@ -2,20 +2,27 @@
 # ID   : 6612054
 # Sec  : 541
 
-n = int(input("Enter number of treasure pieces : "))
+n = int(input())
 values = list(map(int, input().split()))
 
-sum = sum(values)    
-rerult = []
-print("Total :" , sum)
-values.sort(reverse = True)
+total = sum(values)
 
-if sum % 2 == 0:
-    print(values[0])
-    for i in range(1 , len(values)):
-        print(values[i])
-else:
+if total % 2 != 0:
     print("Can't split fairly")
+else:
+    target = total // 2
+
+    dp = [False] * (target + 1)
+    dp[0] = True
+
+    for v in values:
+        for s in range(target, v-1, -1):
+            dp[s] = dp[s] or dp[s - v]
+
+    if dp[target]:
+        print("Can split fairly")
+    else:
+        print("Can't split fairly")
         
 
    
