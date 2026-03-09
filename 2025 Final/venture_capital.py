@@ -4,23 +4,19 @@
 
 n, d = map(int, input().split())
 
-funds = []
-
+investments = []
 for _ in range(d):
-    f, e = map(int, input().split())
-    funds.append((f / e, e, f))
+    f, e = map(int, input().split()) 
+    investments.append((f, e)) 
 
-funds.sort(reverse=True)
+dp = [0] * (n + 1)
 
-total_profit = 0
-remaining_money = n
+for profit, cost in investments:
+    for i in range(cost, n + 1):
+        if dp[i - cost] + profit > dp[i]:
+            dp[i] = dp[i - cost] + profit
 
-for ratio, e, f in funds:
-    shares = remaining_money // e
-    total_profit += shares * f
-    remaining_money -= shares * e
-
-print(total_profit)
+print(dp[n])
 
 
 # Question
