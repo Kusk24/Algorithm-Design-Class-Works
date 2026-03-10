@@ -69,7 +69,9 @@ DISADVANTAGES:
   ✗ Doesn't work if activities have weights
   ✗ Greedy doesn't always work for variants
 
-TIME COMPLEXITY: O(n log n) due to sorting
+BEST CASE: O(n log n) - sorting required
+WORST CASE: O(n log n) - sorting dominates
+AVERAGE TIME COMPLEXITY: O(n log n)
 SPACE COMPLEXITY: O(1) ignoring input storage
 """
 
@@ -100,7 +102,9 @@ DISADVANTAGES:
   ✗ Potential overflow for large numbers
   ✗ Recursive version uses O(log n) stack space
 
-TIME COMPLEXITY: O(log n)
+BEST CASE: O(log n)
+WORST CASE: O(log n)
+AVERAGE TIME COMPLEXITY: O(log n)
 SPACE COMPLEXITY: O(1) iterative, O(log n) recursive
 """
 
@@ -131,7 +135,9 @@ DISADVANTAGES:
   ✗ Complex to implement
   ✗ Can be slow in practice
 
-TIME COMPLEXITY: O(2^n) worst case, much better with good bounds
+BEST CASE: O(n) with perfect pruning
+WORST CASE: O(2^n) when no pruning possible
+AVERAGE TIME COMPLEXITY: Varies greatly with bound quality
 SPACE COMPLEXITY: O(n) for recursion stack
 """
 
@@ -163,7 +169,9 @@ DISADVANTAGES:
   ✗ Not suitable for weighted graphs (use Dijkstra)
   ✗ Explores many unnecessary nodes if solution is deep
 
-TIME COMPLEXITY: O(V + E) where V = vertices, E = edges
+BEST CASE: O(1) if target is at start
+WORST CASE: O(V + E) visits all vertices
+AVERAGE TIME COMPLEXITY: O(V + E)
 SPACE COMPLEXITY: O(V) for queue and visited set
 """
 
@@ -194,7 +202,9 @@ DISADVANTAGES:
   ✗ Doesn't work if no solution exists (returns infinity)
   ✗ Assumes unlimited coins of each denomination
 
-TIME COMPLEXITY: O(V×n) where V = value, n = number of coin types
+BEST CASE: O(V×n) - all subproblems must be solved
+WORST CASE: O(V×n) - all subproblems must be solved
+AVERAGE TIME COMPLEXITY: O(V×n)
 SPACE COMPLEXITY: O(V) - DP array for all values 0 to V
 """
 
@@ -226,7 +236,9 @@ DISADVANTAGES:
   ✗ Requires cycle detection to avoid infinite loops
   ✗ Not optimal for shortest path problems
 
-TIME COMPLEXITY: O(V + E)
+BEST CASE: O(1) if target at start
+WORST CASE: O(V + E) visits all vertices
+AVERAGE TIME COMPLEXITY: O(V + E)
 SPACE COMPLEXITY: O(V) in worst case (all vertices on stack)
 """
 
@@ -258,7 +270,9 @@ DISADVANTAGES:
   ✗ All operations have same cost (can be modified)
   ✗ Doesn't consider semantic meaning
 
-TIME COMPLEXITY: O(m×n) where m, n = string lengths
+BEST CASE: O(min(m,n)) if one string is prefix of other
+WORST CASE: O(m×n) completely different strings
+AVERAGE TIME COMPLEXITY: O(m×n)
 SPACE COMPLEXITY: O(m×n) for 2D table, can optimize to O(min(m,n))
 """
 
@@ -287,7 +301,9 @@ DISADVANTAGES:
   ✗ Requires modulo operation
   ✗ Not useful for floating point
 
-TIME COMPLEXITY: O(log min(a,b))
+BEST CASE: O(1) when b divides a evenly
+WORST CASE: O(log min(a,b)) for consecutive Fibonacci numbers
+AVERAGE TIME COMPLEXITY: O(log min(a,b))
 SPACE COMPLEXITY: O(1) iterative, O(log n) recursive
 """
 
@@ -317,7 +333,9 @@ DISADVANTAGES:
   ✗ Not intuitive to understand
   ✗ 1-indexed (common implementation)
 
-TIME COMPLEXITY: O(log n) per operation
+BEST CASE: O(log n) per operation
+WORST CASE: O(log n) per operation
+AVERAGE TIME COMPLEXITY: O(log n) per operation
 SPACE COMPLEXITY: O(n)
 """
 
@@ -347,7 +365,9 @@ DISADVANTAGES:
   ✗ Only 1 or 2 stones at a time
   ✗ Doesn't handle general graphs
 
-TIME COMPLEXITY: O(n)
+BEST CASE: O(n) must visit all stones
+WORST CASE: O(n) must visit all stones
+AVERAGE TIME COMPLEXITY: O(n)
 SPACE COMPLEXITY: O(n) for DP array
 """
 
@@ -377,7 +397,9 @@ DISADVANTAGES:
   ✗ Slower than A* if memory available
   ✗ Complex to implement correctly
 
-TIME COMPLEXITY: O(b^d) but often much better with good heuristic
+BEST CASE: O(d) with perfect heuristic
+WORST CASE: O(b^d) with poor heuristic
+AVERAGE TIME COMPLEXITY: Much better than O(b^d) with good heuristic
 SPACE COMPLEXITY: O(bd)
 """
 
@@ -407,7 +429,9 @@ DISADVANTAGES:
   ✗ Slower than BFS with large branching factor
   ✗ Not suitable when depth is very large
 
-TIME COMPLEXITY: O(b^d) where b = branching factor, d = depth
+BEST CASE: O(d) solution at shallow depth
+WORST CASE: O(b^d) solution at maximum depth
+AVERAGE TIME COMPLEXITY: O(b^d)
 SPACE COMPLEXITY: O(bd)
 """
 
@@ -440,7 +464,9 @@ DISADVANTAGES:
   ✗ Doesn't find the actual subarray (additional tracking needed)
   ✗ Not suitable for 2D arrays (need different approach)
 
-TIME COMPLEXITY: O(n) - single pass through array
+BEST CASE: O(n) single pass required
+WORST CASE: O(n) single pass required
+AVERAGE TIME COMPLEXITY: O(n)
 SPACE COMPLEXITY: O(1) - only stores max_so_far and max_ending_here
 """
 
@@ -474,7 +500,9 @@ DISADVANTAGES:
   ✗ Only handles integer weights efficiently
   ✗ Each item can only be used once (0/1 constraint)
 
-TIME COMPLEXITY: O(n×W) where n = items, W = capacity
+BEST CASE: O(n×W) all subproblems needed
+WORST CASE: O(n×W) all subproblems needed
+AVERAGE TIME COMPLEXITY: O(n×W)
 SPACE COMPLEXITY: O(n×W) for 2D table, O(W) for space-optimized 1D
 """
 
@@ -504,7 +532,9 @@ DISADVANTAGES:
   ✗ Not efficient for dense graphs (use Prim's)
   ✗ Doesn't handle directed graphs
 
-TIME COMPLEXITY: O(E log E) for sorting + O(E α(V)) for union-find
+BEST CASE: O(E log E) sorting dominates
+WORST CASE: O(E log E) sorting dominates
+AVERAGE TIME COMPLEXITY: O(E log E)
 SPACE COMPLEXITY: O(V + E) for graph storage and union-find
 """
 
@@ -536,7 +566,9 @@ DISADVANTAGES:
   ✗ Finds subsequence not substring
   ✗ Doesn't consider order importance
 
-TIME COMPLEXITY: O(m×n) where m, n = string lengths
+BEST CASE: O(min(m,n)) if one string is subsequence of other
+WORST CASE: O(m×n) completely different strings
+AVERAGE TIME COMPLEXITY: O(m×n)
 SPACE COMPLEXITY: O(m×n) for 2D table
 """
 
@@ -568,7 +600,9 @@ DISADVANTAGES:
   ✗ O(log n) recursion depth
   ✗ Not practical when Kadane's exists
 
-TIME COMPLEXITY: O(n log n)
+BEST CASE: O(n log n) must examine all elements
+WORST CASE: O(n log n) must examine all elements
+AVERAGE TIME COMPLEXITY: O(n log n)
 SPACE COMPLEXITY: O(log n) for recursion stack
 """
 
@@ -599,7 +633,9 @@ DISADVANTAGES:
   ✗ Slower than quicksort in practice (constant factors)
   ✗ Slower than insertion sort for small arrays
 
-TIME COMPLEXITY: O(n log n)
+BEST CASE: O(n log n) always divides evenly
+WORST CASE: O(n log n) always divides evenly
+AVERAGE TIME COMPLEXITY: O(n log n)
 SPACE COMPLEXITY: O(n) for temporary array
 """
 
@@ -630,7 +666,9 @@ DISADVANTAGES:
   ✗ Requires significant pruning for efficiency
   ✗ High memory for solution storage
 
-TIME COMPLEXITY: O(n!) with pruning
+BEST CASE: O(n!) with pruning, still exponential
+WORST CASE: O(n!) explores all permutations
+AVERAGE TIME COMPLEXITY: O(n!) with pruning
 SPACE COMPLEXITY: O(n²) for board
 """
 
@@ -660,7 +698,9 @@ DISADVANTAGES:
   ✗ Requires O(n) space for DP table
   ✗ Assumes prices are given (not discovering them)
 
-TIME COMPLEXITY: O(n²) - nested loops for length and cuts
+BEST CASE: O(n²) all subproblems needed
+WORST CASE: O(n²) all subproblems needed
+AVERAGE TIME COMPLEXITY: O(n²)
 SPACE COMPLEXITY: O(n) - DP array of size n+1
 """
 
@@ -689,7 +729,9 @@ DISADVANTAGES:
   ✗ Not adaptive (doesn't benefit from partial sorting)
   ✗ Many comparisons
 
-TIME COMPLEXITY: O(n²)
+BEST CASE: O(n²) even if already sorted
+WORST CASE: O(n²) even if already sorted
+AVERAGE TIME COMPLEXITY: O(n²)
 SPACE COMPLEXITY: O(1)
 """
 
@@ -719,7 +761,9 @@ DISADVANTAGES:
   ✗ Can overflow for large n
   ✗ Assumes all ways are valid (no constraints)
 
-TIME COMPLEXITY: O(n) with DP
+BEST CASE: O(n) must compute all values
+WORST CASE: O(n) must compute all values
+AVERAGE TIME COMPLEXITY: O(n)
 SPACE COMPLEXITY: O(n) for DP, O(1) with space optimization
 """
 
@@ -749,7 +793,9 @@ DISADVANTAGES:
   ✗ DP solution exists and is faster
   ✗ High memory with recursion
 
-TIME COMPLEXITY: O(2^n)
+BEST CASE: O(1) if first element equals target
+WORST CASE: O(2^n) explores all subsets
+AVERAGE TIME COMPLEXITY: O(2^n)
 SPACE COMPLEXITY: O(n) for recursion stack
 """
 
@@ -780,7 +826,9 @@ DISADVANTAGES:
   ✗ Limited to 1D tiling (2D more complex)
   ✗ Can overflow for large n (need big integers)
 
-TIME COMPLEXITY: O(n) with DP, O(3^n) with naive recursion
+BEST CASE: O(n) with DP, must compute all values
+WORST CASE: O(n) with DP, must compute all values  
+AVERAGE TIME COMPLEXITY: O(n) with DP
 SPACE COMPLEXITY: O(n) for DP array, can optimize to O(1) with variables
 """
 
@@ -809,7 +857,9 @@ DISADVANTAGES:
   ✗ Can't easily split sets once merged
   ✗ Requires array-based representation
 
-TIME COMPLEXITY: O(α(n)) amortized per operation (α = inverse Ackermann)
+BEST CASE: O(α(n)) amortized per operation
+WORST CASE: O(α(n)) amortized per operation
+AVERAGE TIME COMPLEXITY: O(α(n)) where α = inverse Ackermann (effectively O(1))
 SPACE COMPLEXITY: O(n)
 """
 
@@ -884,56 +934,52 @@ Partition into equal sum subsets          → Subset Sum / Balance Split
 ================================================================================
                     PARADIGM-BASED CLASSIFICATION
 ================================================================================
+(Each algorithm appears only once in its primary category)
+
+BACKTRACKING:
+  • N-Queens
+  • Subset Sum / Balance Split
+
+DATA STRUCTURES:
+  • Fenwick Tree
+  • Union-Find
+
+DIVIDE & CONQUER:
+  • Binary Exponentiation
+  • Maximum Subarray
+  • Merge Sort
 
 DYNAMIC PROGRAMMING:
-  • Coin Change Problem
-  • Edit Distance (Levenshtein)
-  • Frog Problem
+  • Coin Change
+  • Edit Distance
+  • Frog
   • Kadane's Algorithm
-  • Knapsack 0/1 Problem
-  • Longest Common Subsequence (LCS)
-  • Rod Cutting Problem
-  • Stair Climbing Problem
-  • Tiling Problem (M3 Tiles)
+  • Knapsack 0/1
+  • Longest Common Subsequence
+  • Rod Cutting
+  • Stair Climbing
+  • Tiling
 
 GRAPH ALGORITHMS:
-  • Breadth-First Search (BFS)
-  • Depth-First Search (DFS)
-  • Kruskal's Algorithm (MST)
+  • Breadth-First Search
+  • Depth-First Search
+  • Kruskal's MST
 
 GREEDY ALGORITHMS:
   • Activity Selection
-  • Kruskal's Algorithm (MST)
 
-DIVIDE & CONQUER:
-  • Binary Exponentiation (Fast Power)
-  • Maximum Subarray (Divide & Conquer)
-  • Merge Sort (for Inversion Count)
-
-BACKTRACKING:
-  • N-Queens Problem
-  • Subset Sum / Balance Split
-
-SEARCH ALGORITHMS:
-  • Breadth-First Search (BFS)
-  • Depth-First Search (DFS)
-  • IDA* (Iterative Deepening A*)
-  • Iterative Deepening Search (IDS)
+MATHEMATICAL:
+  • Euclidean Algorithm (GCD)
 
 OPTIMIZATION:
   • Branch and Bound
 
-DATA STRUCTURES:
-  • Fenwick Tree (Binary Indexed Tree)
-  • Union-Find (Disjoint Set)
+SEARCH ALGORITHMS:
+  • IDA*
+  • Iterative Deepening Search
 
 SORTING:
-  • Merge Sort
   • Selection Sort
-
-MATHEMATICAL:
-  • Euclidean Algorithm (GCD)
-  • Binary Exponentiation
 
 ================================================================================
                         KEY INSIGHTS AND TRADE-OFFS
